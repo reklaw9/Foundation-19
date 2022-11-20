@@ -191,6 +191,8 @@
 		return 0
 	if(!user.IsAdvancedToolUser())
 		return 0
+	if(!user.IsUnableToUseGuns())
+		return 0
 
 	var/mob/living/M = user
 	if(!safety() && world.time > last_safety_check + 5 MINUTES && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
